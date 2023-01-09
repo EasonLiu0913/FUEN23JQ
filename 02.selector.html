@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: #faf;
+            margin-bottom: 10px;
+        }
+
+        #box1,
+        .box.active,
+        a[href="#"] {
+            color: crimson;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box1" class="box">box</div>
+    <div class="box active">box with active</div>
+
+    <a href="#">Links</a>
+
+    <img src="" alt="">
+
+    <script src="./js/jquery-3.6.3.js"></script>
+    <script>
+        $('.box').css('width', '500px')
+
+        $('.box.active').css('background', 'green')
+
+        $('#box1').css('background', 'lightblue')
+
+        $('a[href="#"]').css('font-size', '5rem')
+
+        $('#box1, .box.active, a[href="#"]').css('color', 'yellow')
+
+    </script>
+
+</body>
+
+</html>
