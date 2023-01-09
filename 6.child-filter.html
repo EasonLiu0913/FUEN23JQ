@@ -6,6 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        /* .box:nth-child(2) {
+            background: red;
+        } */
+    </style>
 </head>
 
 <body>
@@ -28,9 +33,18 @@
         <div class="box">box6</div>
     </div>
 
+    <div class="wrap3">
+        <div class="box">wrap3 box1</div>
+    </div>
+
     <script src="./js/jquery-3.6.3.js"></script>
     <script>
-        $('.box:first-of-type').css('background', 'red')
+        // $('.box:first-of-type').css('background', 'red')
+        // $('.box:nth-of-type(1)').css('background', 'red')
+        // $('.box:nth-last-child(4)').css('background', 'red')
+
+        $('.box:only-child').css('background', 'red')
+        $('span:only-of-type').css('background', 'blue')
     </script>
 </body>
 
