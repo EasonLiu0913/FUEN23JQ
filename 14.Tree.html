@@ -26,6 +26,17 @@
         </li>
         <li class="item-3">item-3</li>
     </ul>
+
+    <script src="./js/jquery-3.6.3.js"></script>
+    <script>
+        // $('.level-1').find('.item-02').css('border', '1px solid red')
+
+        // $('.item-002').closest('.item-02').prev().css('border', '1px solid red')
+        // $('.item-002').closest('.level-1').find('.item-03').css('border', '1px solid red')
+
+        // $('.item-001').nextAll().css('border', '1px solid red')
+        $('.item-001').nextUntil('.item-003').css('border', '1px solid red')
+    </script>
 </body>
 
 </html>
