@@ -47,11 +47,31 @@
                     <td>td2</td>
                     <td>td3</td>
                     <td>td4</td>
-                    <td>td5</td>
+                    <td>
+                        <h2>h2</h2>
+                    </td>
                 </tr>
             </table>
         </div>
     </div>
+
+    <h1>H1</h1>
+
+    <script src="./js/jquery-3.6.3.js"></script>
+    <script>
+        // $('td').css('background', 'green')
+
+        $('td:eq(-4)').css('background', 'red')
+
+        // $('td:even').css('background', 'yellow')
+        // $('td:last').css('background', 'blue')
+
+        $('td:lt(-4)').css('background', 'pink')
+        $('td:gt(-4)').css('background', 'lightblue')
+
+        $('table td :header').css('color', 'blue')
+        $(':header').css('color', 'blue')
+    </script>
 </body>
 
 </html>
