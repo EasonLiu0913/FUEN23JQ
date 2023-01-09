@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>attr</title>
+</head>
+
+<body>
+    <a href="http://google.com">google</a>
+
+    <img src="./imgs/1.jpg" alt="">
+
+    <div class="" hidden></div>
+
+    <input type="checkbox" checked>
+
+
+    <script src="./js/jquery-3.6.3.js"></script>
+    <script>
+        console.log('a href:', $('a').attr('href'));
+        console.log('img src:', $('img').attr('src'));
+
+
+        const myImgSrc = './imgs/product1.jpg';
+        $('img').attr('src', myImgSrc)
+
+    </script>
+</body>
+
+</html>
