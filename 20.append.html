@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>append</title>
+</head>
+
+<body>
+    <button>Click</button>
+    <div class="container">
+        <div class="row">
+            <!-- before -->
+            <ul>
+                <!-- prepend -->
+                <li>item 1</li>
+                <li>item 2</li>
+                <!-- append -->
+            </ul>
+            <!-- after -->
+        </div>
+    </div>
+
+
+    <script src="./js/jquery-3.6.3.js"></script>
+    <script>
+        let index = 3;
+        $('button').click(() => {
+            // $('ul').append(`<li>item ${index}</li>`)
+            $('ul').after(`<li>item ${index}</li>`)
+            index++;
+        })
+    </script>
+</body>
+
+</html>

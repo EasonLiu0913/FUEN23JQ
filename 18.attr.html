@@ -15,7 +15,11 @@
 
     <div class="" hidden></div>
 
-    <input type="checkbox" checked>
+    <input type="checkbox" data-sid="12" checked>
+    <input type="checkbox" data-sid="13">
+    <input type="checkbox" data-sid="14" checked>
+
+
 
 
     <script src="./js/jquery-3.6.3.js"></script>
@@ -27,10 +31,14 @@
         // const myImgSrc = './imgs/product1.jpg';
         // $('img').attr('src', myImgSrc)
 
+        // $('input').prop('sid', '12')
+
         $('input').click(function () {
             // console.log('input checked?', $('input').attr('checked'));
 
-            console.log('prop:', $('input').prop('checked'));
+            console.log('prop:', $(event.target).prop('checked'));
+
+            console.log('sid:', $(event.target).data('sid'));
         })
     </script>
 </body>
