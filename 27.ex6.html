@@ -126,25 +126,48 @@
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"
         integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
     <script>
+        let pageNum = 0;
 
         $('.slider-dots li').mouseenter(() => {
             console.log('mouseenter', $(event.target).index());
             const targetIndex = $(event.target).index();
 
-            $(event.target).css('background', '#fff').siblings().css('background', 'transparent')
+            pageNum = targetIndex;
 
-            // 用 index 去取得 (圖片li) 修改 opacity:1; 
-            // 其他圖片 opacity:0;
-            $('.img-wrap li').eq(targetIndex).css('opacity', 1).siblings().css('opacity', 0)
+            reRender();
+
+            // $(event.target).css('background', '#fff').siblings().css('background', 'transparent')
+
+            // // 用 index 去取得 (圖片li) 修改 opacity:1; 
+            // // 其他圖片 opacity:0;
+            // $('.img-wrap li').eq(targetIndex).css('opacity', 1).siblings().css('opacity', 0)
         })
 
         $('.btnNext').click(function () {
             console.log('下一頁');
+            // 頁數+1
+            if (pageNum < 4) {
+                pageNum++;
+            }
+            reRender()
         })
 
         $('.btnPrev').click(function () {
             console.log('上一頁');
+
+            if (pageNum > 0) {
+                pageNum--;
+            }
+            reRender()
         })
+
+        function reRender() {
+            // 修改畫面
+            // 1.圖片的 opacity 改變
+            $('.img-wrap li').eq(pageNum).css('opacity', 1).siblings().css('opacity', 0)
+            // 2.指示點的 background 改變
+            $('.slider-dots li').eq(pageNum).css('background', '#fff').siblings().css('background', 'transparent')
+        }
     </script>
 </body>
 
