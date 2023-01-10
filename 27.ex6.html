@@ -29,7 +29,7 @@
             transition: 0.5s;
         }
 
-        .img-wrap li:nth-child(2) {
+        .img-wrap li:nth-child(1) {
             opacity: 1;
         }
 
@@ -51,7 +51,7 @@
             border: 1px solid #fff;
         }
 
-        .slider-dots li:nth-child(3) {
+        .slider-dots li:nth-child(1) {
             background-color: #fff;
         }
 
@@ -125,7 +125,27 @@
 
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"
         integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-    <script></script>
+    <script>
+
+        $('.slider-dots li').mouseenter(() => {
+            console.log('mouseenter', $(event.target).index());
+            const targetIndex = $(event.target).index();
+
+            $(event.target).css('background', '#fff').siblings().css('background', 'transparent')
+
+            // 用 index 去取得 (圖片li) 修改 opacity:1; 
+            // 其他圖片 opacity:0;
+            $('.img-wrap li').eq(targetIndex).css('opacity', 1).siblings().css('opacity', 0)
+        })
+
+        $('.btnNext').click(function () {
+            console.log('下一頁');
+        })
+
+        $('.btnPrev').click(function () {
+            console.log('上一頁');
+        })
+    </script>
 </body>
 
 </html>
