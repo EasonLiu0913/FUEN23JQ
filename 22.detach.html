@@ -10,7 +10,7 @@
 
 <body>
     <button class="detach btn btn-info">detach</button>
-    <!-- <button class="append btn btn-info">append</button> -->
+    <button class="append btn btn-info">append</button>
     <div class="container">
         <div class="row flex-column">
             <div class="hello">Hello World</div>
@@ -24,6 +24,10 @@
         let isDetached = false;
         let myContent = null;
         // let index = 0;
+
+        $(".row div").click(function () {
+            console.log('text:', $(event.target).text());
+        })
 
         $('.detach').click(function () {
             myContent = $(".row div").detach();
