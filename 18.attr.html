@@ -11,7 +11,7 @@
 <body>
     <a href="http://google.com">google</a>
 
-    <img src="./imgs/1.jpg" alt="">
+    <!-- <img src="./imgs/1.jpg" alt=""> -->
 
     <div class="" hidden></div>
 
@@ -20,13 +20,18 @@
 
     <script src="./js/jquery-3.6.3.js"></script>
     <script>
-        console.log('a href:', $('a').attr('href'));
-        console.log('img src:', $('img').attr('src'));
+        // console.log('a href:', $('a').attr('href'));
+        // console.log('img src:', $('img').attr('src'));
 
 
-        const myImgSrc = './imgs/product1.jpg';
-        $('img').attr('src', myImgSrc)
+        // const myImgSrc = './imgs/product1.jpg';
+        // $('img').attr('src', myImgSrc)
 
+        $('input').click(function () {
+            // console.log('input checked?', $('input').attr('checked'));
+
+            console.log('prop:', $('input').prop('checked'));
+        })
     </script>
 </body>
 
