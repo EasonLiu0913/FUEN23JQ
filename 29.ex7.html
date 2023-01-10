@@ -32,7 +32,45 @@
 
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"
         integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-    <script></script>
+    <script>
+        let districtArray = [
+            ['七堵', '中正', '暖暖'],
+            ['中正', '大安', '信義', '中山'],
+            ['蘆洲', '三重', '新店'],
+        ];
+
+
+        $('#city').change(function () {
+            // 1.判斷使用者選擇哪一個城市?
+            console.log('city number?', $(event.target).val());
+            const cityNum = $(event.target).val();
+
+            // 2.取得使用者選定城市的區名陣列資料
+            const districtData = districtArray[cityNum];
+            console.log('districtData', districtData);
+
+
+            // 3.修改 #district 下拉式選單的 option
+
+            // console.log();
+            // $('#district option').eq(0).text(districtData[0] + '區')
+            // $('#district option').eq(1).text(districtData[1] + '區')
+            // $('#district option').eq(2).text(districtData[2] + '區')
+
+            $('#district').empty();
+            for (let i = 0; i < districtData.length; i++) {
+                $('#district').append(`<option value="${i}">${districtData[i]}區</option>`);
+                // $('#district option').eq(i).text(districtData[i] + '區')
+            }
+
+            // districtData.forEach(function (value, index) {
+            //     $('#district').append(`<option value="${index}">${value}區</option>`);
+
+            //     // $('#district option').eq(index).text(value + '區')
+            // })
+
+        })
+    </script>
 </body>
 
 </html>
