@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>off</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: #faf;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="on">on</button>
+    <button class="off">off</button>
+
+    <div class="box"></div>
+
+    <script src="./js/jquery-3.6.3.js"></script>
+    <script>
+        const sayHi = function () {
+            console.log('hi');
+        };
+
+
+        $('.on').click(function () {
+            console.log('on');
+
+            $('.box').on('click', sayHi)
+        })
+
+        $('.off').click(function () {
+            console.log('off');
+
+            $('.box').off('click', sayHi)
+        })
+
+        $('.box').one('click', function () {
+            console.log('once');
+        });
+
+
+        // const y = x;
+
+        // console.log('x===y', x === y);
+
+
+        // y.push(3)
+
+        // console.log('y', y);
+        // console.log('x', x);
+    </script>
+</body>
+
+</html>

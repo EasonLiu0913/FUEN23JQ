@@ -24,13 +24,16 @@
             $('ul').append(`<li>item 3</li>`)
         })
 
-        // $('li').click(function () {
-        //     console.log('li:', $(event.target).text());
-        // })
+        const myTest = 'li'
+        const lis = document.querySelectorAll('li')
 
-        $('ul').on('click', 'li', function () {
+        $(lis).click(function () {
             console.log('li:', $(event.target).text());
         })
+
+        // $('ul').on('click', 'li', function () {
+        //     console.log('li:', $(event.target).text());
+        // })
     </script>
 </body>
 

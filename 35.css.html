@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: #faf;
+            transition: 1s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+
+    <script src="./js/jquery-3.6.3.js"></script>
+    <script>
+        console.log('background', $('.box').css('background-color'));
+
+        const boxStyle1 = { background: 'red', width: '500px' }
+
+        const boxStyle2 = { background: '#faf', width: '200px' }
+
+        $('.box').click(function () {
+            $('.box').css('width', '+=100')
+            // if ($('.box').css('background-color') === 'rgb(255, 170, 255)') {
+            //     $('.box').css(boxStyle1)
+            // }
+            // else {
+            //     $('.box').css(boxStyle2)
+            // }
+
+        })
+    </script>
+</body>
+
+</html>
