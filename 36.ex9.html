@@ -82,8 +82,43 @@
 
         $('#left').click(function () {
             const boxLeft = $('.box').css('left');
-            if (parseInt(boxLeft) > 0) {
+            if (parseInt(boxLeft) > movement) {
                 $('.box').css('left', `-=${movement}`)
+            }
+            else {
+                $('.box').css('left', `${0}px`)
+            }
+        })
+
+        $(document).keydown(function () {
+            console.log('event:', event.key);
+
+            if (event.key === "ArrowLeft") {
+                const boxLeft = $('.box').css('left');
+                if (parseInt(boxLeft) > movement) {
+                    $('.box').css('left', `-=${movement}`)
+                }
+                else {
+                    $('.box').css('left', `${0}px`)
+                }
+            }
+
+            if (event.key === "ArrowRight") {
+                const wrapWidth = $('.wrapper').width();
+                const boxWidth = $('.box').width();
+                const boxLeft = $('.box').css('left');
+                const maxMove = wrapWidth - boxWidth;
+
+                console.log('wrapWidth', wrapWidth);
+                console.log('boxWidth', boxWidth);
+
+                if (parseInt(boxLeft) <= (maxMove - movement)) {
+                    $('.box').css('left', `+=${movement}`)
+                }
+                else {
+                    $('.box').css('left', `${maxMove}px`)
+                }
+                console.log('boxLeft', $('.box').css('left'));
             }
         })
     </script>

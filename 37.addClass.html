@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>addClass</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        ul li {
+            margin-right: 10px;
+        }
+
+        ul li a {
+            color: #000;
+            text-decoration: none;
+        }
+
+        ul li a.active {
+            color: darkseagreen;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: #faf;
+        }
+
+        .box.active {
+            background-color: #afa;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li><a class="active" href="#">link1</a></li>
+        <li><a href="#">link2</a></li>
+        <li><a href="#">link3</a></li>
+        <li><a href="#">link4</a></li>
+        <li><a href="#">link5</a></li>
+    </ul>
+
+    <div class="box"></div>
+
+    <script src="./js/jquery-3.6.3.js"></script>
+    <script>
+        $('a').click(function () {
+            event.preventDefault();
+            console.log('a');
+            $(event.target).addClass('active').parent().siblings().children().removeClass('active')
+        })
+
+        $('.box').click(function () {
+            $(event.target).toggleClass('active')
+
+            console.log('has class?', $(event.target).hasClass('active'));
+        })
+    </script>
+</body>
+
+</html>
