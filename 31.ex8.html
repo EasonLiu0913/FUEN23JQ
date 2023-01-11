@@ -40,8 +40,9 @@
         $(window).scroll(function () {
             const scrollTop = $(window).scrollTop();
             const bodyHeight = $('body').height();
+            const windowHeight = $(window).height();
 
-            const percentage = scrollTop / bodyHeight * 100;
+            const percentage = scrollTop / (bodyHeight - windowHeight) * 100;
 
             console.log('percentage', percentage);
 
