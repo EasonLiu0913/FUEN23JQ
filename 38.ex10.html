@@ -32,9 +32,9 @@
         <!-- toggle button -->
         <div class="py-2 d-flex justify-content-end">
             <div class="btn-group">
-                <button class="btnS btn btn-info ">S</button>
-                <button class="btnM btn btn-info active">M</button>
-                <button class="btnL btn btn-info ">L</button>
+                <button class="btnS btn btn-primary ">S</button>
+                <button class="btnM btn btn-primary active">M</button>
+                <button class="btnL btn btn-primary ">L</button>
             </div>
         </div>
 
@@ -62,22 +62,26 @@
         integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
     <script>
         $('button').click(function () {
-            console.log('target', $(event.target).hasClass('btnS'));
+            // console.log('target', $(event.target).hasClass('btnS'));
+            $(event.target).addClass('active').siblings().removeClass('active')
+
 
             if ($(event.target).hasClass('btnS')) {
-                console.log('hi S');
+                // console.log('hi S');
                 $('p').addClass('fontS').removeClass('fontM fontL')
+
             }
 
             if ($(event.target).hasClass('btnM')) {
-                console.log('hi M');
+                // console.log('hi M');
                 $('p').addClass('fontM').removeClass('fontS fontL')
             }
 
             if ($(event.target).hasClass('btnL')) {
-                console.log('hi L');
+                // console.log('hi L');
                 $('p').addClass('fontL').removeClass('fontM fontS')
             }
+
         })
     </script>
 </body>
